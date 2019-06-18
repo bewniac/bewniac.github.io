@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "Docker, mongodb and Rapid7 Forward DNS data"
+date:   2019-06-18 10:34:54 +0200
+categories: dns rapid7 docker mongodb
+---
+## Docker, mongodb and Rapid7 Forward DNS data
+I came across Rapid7's dump with a massive amount of forward DNS entries. It contains CNAME, A, AAAA, MX, DMARC, ANY and more DNS record types. The dump is a part of the Project Sonar and produces new data on a regular basis by sending an DNS ANY query for domains extracted from a lot of different sources. You can read more about it on their github page [here](https://github.com/rapid7/sonar/wiki/Forward-DNS) and on the project page [here](https://opendata.rapid7.com/sonar.fdns_v2/).
+
+I wanted to start playing with docker, so this gave me an idea. I want to make this data easy to query. It's a JSON based dataset so my first choice is the popular mongo database. First of all I need docker, and then a mongo container. I'm running on an Ubuntu 18.04 LTS 64-bit machine. Let's install docker.
+```
+apt install docker
+```
+When docker is installed I can pull the dockerhub for the mongo image.
+```
+docker pull mongo
+```
+Now to my first issue, which I busted my ass of with for more time than I want to admit. I want to store the mongo database on my NAS. I created a SMB share and mounted it in a docker volume. The biggest issue I had was the permission settings. I know the permissions are probably to open, but I don't care right know. Might fix it later. 
+```
+docker volume create \
+	--driver local \
+	--opt type=cifs \
+	--opt device=//192.168.1.10/mongodata \
+	--opt o=username=mongoshare,password=password,uid=999,gid=999,file_mode=0777,dir_mode=0777 \
+	mongodata
+```
+Next I need to run the mongo container. This is not best practice, since secrets are stored in cleartext in the containers enviromental variables. Nevermind that. This starts a container named "mongo" with a admin username and password. It also creates a database where I want to store my DNS dataset. The `-p 192.168.1.1:27017:27017` line maps the volume I created earlier to the default mongo database data store `/data/db`. 
+```
+docker run -d --name mongo \
+	-e MONGO_INITDB_ROOT_USERNAME=admin \
+	-e MONGO_INITDB_ROOT_PASSWORD=password \
+	-e MONGO_INITDB_DATABASE=database_name \
+	-p 192.168.1.1:27017:27017 \
+	-v mongodata:/data/db \
+	mongo mongod --auth
+```
+Let's try it out and login!
+```
+mongo -u "admin" -p "password" --authenticationDatabase "admin" 192.168.1.1
+```
+If it was successful you probably noticed that. We change the database to the one we created when we started our container and add a user for read and write access to that database.
+```
+> use database_name
+> db.createUser(
+  {
+    user: "user",
+    pwd: "password",
+    roles: [ { role: "readWrite", db: "database_name" } ]
+  }
+)
+```
+If the command below is successful the connection works. 
+```
+mongo -u "user" -p "password" --authenticationDatabase "database_name" 192.168.1.1/database_name
+```
+Now I want to import all the data from the dataset. `pigz -dc` decompress the file and sent it to stdout. Without the `--file` flag set in `mongoimport` it will take it's data from stdin. So perfect, we can just pipe our output to the input!
+```
+for f in `ls sonar.fdns_v2/`; do pigz -dc sonar.fdns_v2/$f | mongoimport --host 192.168.1.1 --username user --password password --db database_name --collection dns ; done
+```
+Now I want some fancy smancy webapp to present my data. I read something about mongo-express being a good option so I tried it out. The `ME_CONFIG_BASICAUTH_` environment variables are used for local authentication for the webapp. The `ME_CONFIG_MONGODB_ENABLE_ADMIN` tells the mongo-express service to authenticate using a non-admin user. The IP `172.17.0.2` is the docker network IP address of the mongo container.
+```
+docker run \
+    --name mongo-express \
+    -p 192.168.1.1:4000:8081 \
+    -e ME_CONFIG_MONGODB_SERVER="172.17.0.2" \
+    -e ME_CONFIG_BASICAUTH_USERNAME="mongo" \
+    -e ME_CONFIG_BASICAUTH_PASSWORD="mongo" \
+    -e ME_CONFIG_MONGODB_ENABLE_ADMIN="false" \
+    -e ME_CONFIG_MONGODB_AUTH_USERNAME="user" \
+    -e ME_CONFIG_MONGODB_AUTH_PASSWORD="password" \
+    -e ME_CONFIG_MONGODB_AUTH_DATABASE="database_name" \
+    mongo-express
+```
+Now we can access our mongo-express webapp using the following URL.
+```
+http://192.168.1.1:4000
+```
+
