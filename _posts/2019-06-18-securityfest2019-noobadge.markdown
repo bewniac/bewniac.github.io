@@ -16,30 +16,30 @@ I wanted to do something cool for Security fest 2019 and I wanted to do it mysel
 
 Simple enough. I built a prototype that could be powered by 5V micro USB. Although the components require 3.3V, but with a voltage regulator (LD1117V33) this wasn't an issue. The result was this:
 
-![First Prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/First_prototype.jpg)
+![First Prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/First_prototype.jpg)
 
 Not so pretty, I know. But it worked. But then I wanted to create my own PCB prototype, with as much hand-solderable components as possible as I've never done SMD soldering before. I created my first schematic and PCB design in KiCAD. 
 
-![Schematic prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Prototype1_schematic.png)
-![PCB Prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/PCB_Prototype1.png)
+![Schematic prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Prototype1_schematic.png)
+![PCB Prototype](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/PCB_Prototype1.png)
 
 Still not pretty, but much better than my hand-made prototype and very fun to do! I ordered 10 PCBs from https://jlcpcb.com/ and the components I was missing from https://lcsc.com/ and waited. When it arrived I was extatic! My first PCB! I soldered all the components as soon as I got it (although I had to fix some errors with the backlight LEDs at first, I forget a GND route to the backlight LEDs). 
 
-![PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Prototype_PCB2.jpg)
+![PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Prototype_PCB2.jpg)
 
 When I did some programming trying to come up with some fun stuff to add I found I was missing something, buttons for user interaction. So I had to modify the badge a bit. I used the ADC (Analog to Digital Converter) pin to add two buttons and controll them with one pin. This can be done by adding resistors of different value to the GND leg of each button. The analog voltage is converted by the pin to a digital number. The resistors will reduce the voltage to different values on each button, hence the digital number will be differ between the buttons and I can make descisions in the code based on those values. Next I had a brilliant idea, it has to be battery powered! A Li-Po battery should do the trick. But we also like to charge the Li-Po battery. So I modified my prototype by hand, added buttons, a Li-Po battery and a Li-Po charger circuit (from Adafruit, which is open hardware and the schematics are avaiable on their website). The result was this:
 
-![PCB_MOD](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Prototype_PCB_mod.jpg)
+![PCB_MOD](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Prototype_PCB_mod.jpg)
 
 So now I got a prototype I feel pretty good about to work on. It runs on battery and the battery can be charged, AWESOME! Now I want to make the final design. A square badge feels so boring and we've got a cool logo to work with. So I started to create a schematic including the charging curcuit (based on the Adafruit schematic) and the buttons. And I also made some changes I replaced the ESP-12F module for the new ESP-12S module. Same form-factor, removed unnecessary pins and little faster CPU frequency. I had to edit the ESP-12F module PCB footprint myself to get a footprint for the new component. 
 
 The final schematic:
 
-![Final schematic](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Final_schematic.png)
+![Final schematic](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Final_schematic.png)
 
 And the final PCB design:
 
-![Final PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Final_PCB.png)
+![Final PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Final_PCB.png)
 
 (Several month after, when we finally got the finished assembled PCB:s from seeedstudio)
 
@@ -47,6 +47,6 @@ F\*ck. Look at the through-holes for TX/RX. They're placed on top of the ESP-12S
 
 Schematic and PCB with fixed issues.
 
-![Final schematic](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Final_schematic_rev2.png)
+![Final schematic](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Final_schematic_rev2.png)
 
-![Final PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/images/Final_PCB_rev2.png)
+![Final PCB](https://raw.githubusercontent.com/securityfest/securityfest-badge-2019/master/images/Final_PCB_rev2.png)
