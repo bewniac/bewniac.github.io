@@ -7,7 +7,7 @@ categories: hacking scanning port dns rpd masscan
 NOTE! The scans are done solely in the purpose of research. Any issues I find have been reported in a responsible manner and no sensitive data is stored. I suggest to all organisations to keep track of their Internet connected services. Scanning their own IP blocks (IPv4 and IPv6). You can reach out to me at twitter [@bewniac](https://twitter.com/bewniac).
 
 ## DNS udp 53
-I'm trying to get more into DNS and wanted to do some research on open resolvers in Sweden. First I wanted to get a list of all Swedish registred IP blocks, which is listed [here](http://ipverse.net/ipblocks/data/countries/se.zone). I haven't checked it against other lists and it might now be fully complete but for my purpose it's good enough. 
+I'm trying to get more into DNS and wanted to do some research on open resolvers in Sweden. First I wanted to get a list of all Swedish registred IP blocks, which is listed [here](http://ipverse.net/ipblocks/data/countries/se.zone). I haven't checked it against other lists and it might not be fully complete but for my purpose it's good enough. 
 
 So first I want to get all servers running DNS (UDP port 53). I used [masscan](https://github.com/robertdavidgraham/masscan), which is a really fast Internet port scanner. 
 
