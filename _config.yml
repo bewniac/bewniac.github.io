@@ -17,14 +17,14 @@ title: hackad blog
 email: benjamin@hackad.nu
 description: >- # this means to ignore newlines until "baseurl:"
   notes in blog form. 
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: bewniac
 github_username:  bewniac
 
 # Build settings
 markdown: kramdown
-rmeote-theme: minima
+theme: minima
 plugins:
   - jekyll-feed
 
