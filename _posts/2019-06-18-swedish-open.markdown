@@ -4,7 +4,6 @@ title:  "Swedish Open!"
 date:   2019-06-18 10:34:54 +0200
 categories: hacking scanning port dns rpd masscan
 ---
-# Swedish Open
 NOTE! The scans are done solely in the purpose of research. Any issues I find have been reported in a responsible manner and no sensitive data is stored. I suggest to all organisations to keep track of their Internet connected services. Scanning their own IP blocks (IPv4 and IPv6). You can reach out to me at twitter [@bewniac](https://twitter.com/bewniac).
 
 ## DNS udp 53

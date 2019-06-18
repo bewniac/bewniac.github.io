@@ -4,7 +4,6 @@ title:  "Docker, mongodb and Rapid7 Forward DNS data"
 date:   2019-06-18 10:34:54 +0200
 categories: dns rapid7 docker mongodb
 ---
-## Docker, mongodb and Rapid7 Forward DNS data
 I came across Rapid7's dump with a massive amount of forward DNS entries. It contains CNAME, A, AAAA, MX, DMARC, ANY and more DNS record types. The dump is a part of the Project Sonar and produces new data on a regular basis by sending an DNS ANY query for domains extracted from a lot of different sources. You can read more about it on their github page [here](https://github.com/rapid7/sonar/wiki/Forward-DNS) and on the project page [here](https://opendata.rapid7.com/sonar.fdns_v2/).
 
 I wanted to start playing with docker, so this gave me an idea. I want to make this data easy to query. It's a JSON based dataset so my first choice is the popular mongo database. First of all I need docker, and then a mongo container. I'm running on an Ubuntu 18.04 LTS 64-bit machine. Let's install docker.
