@@ -24,7 +24,7 @@ github_username:  bewniac
 
 # Build settings
 markdown: kramdown
-rmeote-theme: jekyll-theme-dinky
+rmeote-theme: minima
 plugins:
   - jekyll-feed
 
