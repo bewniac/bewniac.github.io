@@ -49,3 +49,4 @@ I can see some requirements going through all the different components:
 - [https://cloud.google.com/beyondcorp/](https://cloud.google.com/beyondcorp/)
 - [https://www.amazon.com/Zero-Trust-Networks-Building-Untrusted/dp/1491962194](https://www.amazon.com/Zero-Trust-Networks-Building-Untrusted/dp/1491962194)
 - [https://www.microsoft.com/security/blog/2018/06/14/building-zero-trust-networks-with-microsoft-365/](https://www.microsoft.com/security/blog/2018/06/14/building-zero-trust-networks-with-microsoft-365/)
+- [https://duo.com/product](https://duo.com/product)
