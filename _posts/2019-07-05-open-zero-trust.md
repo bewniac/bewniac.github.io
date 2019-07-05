@@ -13,7 +13,7 @@ Zero trust network is a concept with the goal to remove the old and outdated per
 ```
 Zero trust defines all networks as untrusted and is placing the trust on the device and user. A device could be anything connected to a network, a client, server, IoT device, printer, smartphone etc. Simply put the user and device requires to be authenticated and the network flow accessing any resource on the network need to be authorized. A zero trust network collects information about devices and users to build a trust score. The trust score is used to evaluate if a user and device pair are authorized to access a network resource. The connection to any resource is only available to the device if the trust score is equeal to or over the limit required to access the resource, the zero trust network opens access to resources dynamically. This means that no resources are available for an unathenticated device or user. 
 
-This is a very brief explaination of zero trust networks. I will write a separate post for each and every component in a zero trust network. My goal is to define zero trust networks and how they could be implemented using open source tools and well-known technologies. 
+This is a very brief explaination of zero trust networks. I will write a separate post for each and every component in a zero trust network. My goal is to define zero trust networks and how they could be implemented using open source tools and well-known technologies, as well as learning some new things along the way.
 
 Table of Contents: 
 1. Policy
@@ -25,7 +25,7 @@ Table of Contents:
 7. Authorization
 8. Logging and monitoring
 
-If anyone reading this have any good resources, other ideas or just think that this might be fun to collaborate on don't hesitate to hit me up on [twitter](https://www.twitter.com/bewniac) or send me an email. 
+If anyone reading this have any good resources, comments (all feedback are welcome!), other ideas or just think that this might be fun to collaborate on don't hesitate to hit me up on [twitter](https://www.twitter.com/bewniac) or send me an email. 
 
 
 # Resources
