@@ -15,6 +15,7 @@ Zero trust defines all networks as untrusted and is placing the trust on the dev
 
 This is a very brief explaination of zero trust networks. I will write a separate post for each and every component in a zero trust network. My goal is to define zero trust networks and how they could be implemented using open source tools and well-known technologies. 
 
+Table of Contents: 
 1. Policy
 2. Agent
 3. Policy engine
