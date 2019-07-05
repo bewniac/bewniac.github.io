@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Getting started with CAN (Car hacking)
-date:   2019-06-19 12:14:24 +0200
+date:   2019-07-05 00:00:00 +0200
 categories: 
 ---
 
