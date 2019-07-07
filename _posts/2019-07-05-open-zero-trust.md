@@ -15,15 +15,18 @@ Zero trust defines all networks as untrusted and is placing the trust on the dev
 
 This is a very brief explaination of zero trust networks. I will write a separate post for each and every component in a zero trust network. My goal is to define zero trust networks and how they could be implemented using open source tools and well-known technologies, as well as learning some new things along the way.
 
-Table of Contents: 
+### Table of Contents: 
+#### Concepts
 1. Policy
+2. Authentication
+3. Authorization
+#### Components
+1. Inventory Database
 2. Agent
 3. Policy engine
 4. Trust engine
 5. Enforcer 
-6. Authentication
-7. Authorization
-8. Logging and monitoring
+6. Logging & monitoring
 
 If anyone reading this have any good resources, comments (all feedback are welcome!), other ideas or just think that this might be fun to collaborate on don't hesitate to hit me up on [twitter](https://www.twitter.com/bewniac) or send me an email. 
 
