@@ -20,6 +20,7 @@ This is a very brief explaination of zero trust networks. I will write a separat
 1. Policy
 2. Authentication
 3. Authorization
+
 #### Components
 1. Inventory Database
 2. Agent
