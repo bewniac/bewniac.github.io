@@ -4,6 +4,11 @@ title:  Open Zero Trust - Introduction
 date:   2019-07-05 15:14:24 +0200
 categories: networking zerotrust
 ---
+<!--
+Comments 
+
+-->
+
 Zero trust network is a concept with the goal to remove the old and outdated perimeter model all together. The perimeter model in networking design traditionally defines the Internet as an untrusted network which is separated from the trusted corporate networks by a perimiter. The perimiter is usually some kind of firewall or proxy. 
 
 ```
@@ -15,11 +20,14 @@ Zero trust defines all networks as untrusted and is placing the trust on the dev
 
 This is a very brief explaination of zero trust networks. I will write a separate post for each and every component in a zero trust network. My goal is to define zero trust networks and how they could be implemented using open source tools and well-known technologies, as well as learning some new things along the way.
 
-### Table of Contents: 
+### Table of Contents
 #### Concepts
-1. Policy
-2. Authentication
-3. Authorization
+1. Trust policy
+2. Trust score
+3. Authentication
+4. Authorization
+5. Single Sign-On
+6. Secure storage
 
 #### Components
 1. Inventory Database
@@ -28,6 +36,8 @@ This is a very brief explaination of zero trust networks. I will write a separat
 4. Trust engine
 5. Enforcer 
 6. Logging & monitoring
+7. Private Public Key Infrastructure
+8. Credential vault
 
 If anyone reading this have any good resources, comments (all feedback are welcome!), other ideas or just think that this might be fun to collaborate on don't hesitate to hit me up on [twitter](https://www.twitter.com/bewniac) or send me an email. 
 
