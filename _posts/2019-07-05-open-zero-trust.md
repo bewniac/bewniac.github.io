@@ -4,11 +4,6 @@ title:  Open Zero Trust - Introduction
 date:   2019-07-05 15:14:24 +0200
 categories: networking zerotrust
 ---
-<!--
-Comments 
-
--->
-
 Zero trust network is a concept with the goal to remove the old and outdated perimeter model all together. The perimeter model in networking design traditionally defines the Internet as an untrusted network which is separated from the trusted corporate networks by a perimiter. The perimiter is usually some kind of firewall or proxy. 
 
 ```
@@ -49,3 +44,4 @@ If anyone reading this have any good resources, comments (all feedback are welco
 - [https://www.microsoft.com/security/blog/2018/06/14/building-zero-trust-networks-with-microsoft-365/](https://www.microsoft.com/security/blog/2018/06/14/building-zero-trust-networks-with-microsoft-365/)
 - [https://duo.com/product](https://duo.com/product)
 - [https://osquery.readthedocs.io](https://osquery.readthedocs.io)
+- [https://www.ejbca.org/](https://www.ejbca.org/)
