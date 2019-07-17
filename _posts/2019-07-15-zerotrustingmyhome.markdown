@@ -4,7 +4,7 @@ title:  Zero trusting my home - part 1
 date:   2019-07-15 15:14:24 +0200
 categories: networking zerotrust
 ---
-So I've started my migration in my home environment from a perimeter based model to the zero trust. By first of all implementing some services like DNS, reverse proxy and a certificate authority. My goal is to make this transition as easy and transparent as possible because my fiance do not enjoy me making it harder to access network resources. First of all, let's try to implement a DNS server.
+So I've started my migration in my home environment from a perimeter based model to the zero trust. By first of all implementing some services like DNS, reverse proxy and a certificate authority. My goal is to make this transition as easy and transparent as possible because my fiance do not enjoy me making it harder to access network resources. First of all, let's try to deply a DNS server.
 
 ## DNS Server 
 I've chosen to make my own life harder for myself and installed bind as my DNS server. [Bind](https://www.isc.org/bind/) got a lot of features and could be a pain to configure what I've heard, but for a home environment the setup and configuration wasn't that difficult. I've run through what I did step by step. 
