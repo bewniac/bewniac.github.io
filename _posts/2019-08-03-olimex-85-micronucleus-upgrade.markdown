@@ -53,4 +53,8 @@ Now we want to flash the attiny85 using our Arduino Uno with the latest micronuc
 root@hacktop$ avrdude -c arduino -p attiny85 -P /dev/ttyACM3 -b 19200 -U flash:w:t85_default.hex:i -U lfuse:w:0xe1:m -U hfuse:w:0xdd:m -U efuse:w:0xfe:m
 ```
 
+### Add latest support to use your Arduino IDE 
+
+If you want to use your Arduino IDE with the Digistump board settings to write and upload your code you need to add the new micronucleus commandline binary to your Arduino setup. Replace the old binary (for me, it's located in `~/.arduino15/packages/digistump/tools/micronucleus`) with the new one in `micronucleus/commandline/`. 
+
 If something went wrong, check your connections or permissions (run as root if it doesn't work the first time). If you have any questions or comments hit me up on [Twitter](https://twitter.com/bewniac).
