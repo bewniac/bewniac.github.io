@@ -4,7 +4,6 @@ title:  Zero trusting my home - part 2
 date:   2019-07-15 15:14:24 +0200
 categories: networking zerotrust
 ---
-## Certificate Authority (OpenSSL)
 The most important part in a zero trust network is the identification of devices and users. We can identify a device using x509 certificates. Depending on the content of the certificate it can provide metrics to better make descisions on whether or not the device is allowed access to resources. This is not a very common thing to run in a home environment (in my experience) but there's a lot of security benifits of doing so. Like running 802.1X on your LAN and WLAN or using mutual TLS towards webb services.
 
 First of all, we need [OpenSSL](https://www.openssl.org/). Which comes pre-installed on most linux distributions. I'm running it on Ubuntu 18.04 LTS. Then we need to create our private key and our CA certificate. I created a new directory under `/etc/ssl` called `home_certs` to put my signed certificates. And a directory called `private` which will store my private key. The CA need some files to work, a file called `serial` which contains the latest serial number to keep track of the certificates, and an `index.txt` file. Both files are put in a folder I call `CA` under `/etc/ssl`. The `serial` file should contain a number which could be incremented, I just use `01` as my first serial number. 
