@@ -24,7 +24,7 @@ github_username:  bewniac
 
 # Build settings
 markdown: GFM
-remote-theme: chrisrhymes/bulma-clean-theme
+theme: minima
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
