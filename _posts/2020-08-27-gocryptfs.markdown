@@ -43,6 +43,7 @@ Common Options (use -hh to show all):
   --                 Stop option parsing
 
 
-bash$ gocryptfs plainTextFolder EncryptedFolder
-bash$ umount EncryptedFolder
+bash$ gocryptsfs -init EncryptedFolder
+bash$ gocryptfs EncryptedFolder plainTextFolder
+bash$ umount plainTextFolder
 ``` 
