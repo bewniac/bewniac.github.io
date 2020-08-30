@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "Wireguard on Ubiquity Unifi Security Gateway"
-date:   2020-08-30 02:00:00 +0800
+title:  "WireGuard for Ubiquiti Devices"
+date:   2020-08-30 10:00:00 +0200
 categories: 
 ---
 I've added Wireguard to my USG to route all traffic through Wireguard interface with Mullvad VPN.
+
+Install Wireguard on your USG device with [Wireguards offical USG release.](https://github.com/WireGuard/wireguard-vyatta-ubnt)
 
 ```[bash]
 set interfaces wireguard wg0 address [IPv4]

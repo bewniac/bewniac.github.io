@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "gocryptfs"
-date:   2020-08-27 02:00:00 +0800
+date:   2020-08-27 10:00:00 +0200
 categories: 
 ---
 Looking for something commandline to help me mount encrypted folders for projects. Veracrypt and ecryptfs were two options. But then I found gocryptfs which in syntax looks more like encfs, simple as shit, and seems to be doing it fast. Based on Go's FUSE library. Good encryption methods, AES-256-GCM. From their Security design docs: "gocryptfs builts upon well-known cryptographic primitives: scrypt for key derivation, AES-GCM for file content encryption and, as a world's first for encrypted filesystems, EME wide-block encryption for file name encryption.".
