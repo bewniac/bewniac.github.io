@@ -4,8 +4,7 @@ title:  "Wireguard on Ubiquity Unifi Security Gateway"
 date:   2020-08-30 02:00:00 +0800
 categories: 
 ---
-
-
+I've added Wireguard to my USG to route all traffic through Wireguard interface with Mullvad VPN.
 ```
 set interfaces wireguard wg0 address [IPv4]
 set interfaces wireguard wg0 address [IPv6]
