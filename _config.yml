@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: hackad blog
+title: hackad notes
 email: benjamin@hackad.nu
 description: >- # this means to ignore newlines until "baseurl:"
   notes. 
@@ -23,7 +23,7 @@ twitter_username: bewniac
 github_username:  bewniac
 
 # Build settings
-markdown: GFM
+markdown: kramdown
 theme: minima
 
 # Exclude from processing.
