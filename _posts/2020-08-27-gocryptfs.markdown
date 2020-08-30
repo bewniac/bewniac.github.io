@@ -8,7 +8,7 @@ Looking for something commandline to help me mount encrypted folders for project
 
 [https://github.com/rfjakob/gocryptfs](https://github.com/rfjakob/gocryptfs)
 
-```
+```[bash]
 bash$ apt install gocryptfs
 
 gocryptfs 1.7.1; go-fuse 0.0~git20190214.58dcd77; 2019-12-26 go1.13.5 linux/amd64
@@ -46,4 +46,4 @@ Common Options (use -hh to show all):
 bash$ gocryptsfs -init EncryptedFolder
 bash$ gocryptfs EncryptedFolder plainTextFolder
 bash$ umount plainTextFolder
-``` 
+```
