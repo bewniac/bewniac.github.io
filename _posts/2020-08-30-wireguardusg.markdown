@@ -41,3 +41,11 @@ set service nat rule 5001 type masquerade
 
 set protocols static table 10 interface-route 0.0.0.0/0 next-hop-interface wg0
 ```
+
+## Make configuration persistent
+On USG Device
+```
+mca-ctrl -t dump-cfg > config.gateway.json
+```
+Copy config.gateway.json to controller and strip it to only the Wireguard related content. 
+On linux place the file in /usr/lib/unifi/sites/default/
